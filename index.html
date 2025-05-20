@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fixed Sidebar Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Overlay (mobile only) -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+  <!-- Mobile Topbar -->
+  <header class="md:hidden flex items-center justify-between bg-gray-900 text-white px-4 py-3 z-50 relative">
+    <div class="text-xl font-bold flex items-center gap-2">
+      Project-H<i class="ph ph-chart-bar text-blue-400"></i>
+    </div>
+    <button id="menuToggle" class="text-2xl">
+      <i id="menuIcon" class="ph ph-list"></i>
+    </button>
+  </header>
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+         class="fixed top-0 left-0 h-screen w-64 bg-gray-900 text-white flex flex-col justify-between transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50 overflow-y-auto md:overflow-y-auto">
+    <div>
+      <!-- Logo -->
+      <div class="flex px-6 py-4 text-2xl font-bold items-center gap-2 border-b border-gray-800 sticky top-0 bg-gray-900 z-10">
+        Project-H<i class="ph ph-chart-bar text-blue-400 text-xl"></i>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="mt-4 space-y-2 px-4">
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm hover:bg-gray-800">
+          <i class="ph ph-chart-bar text-lg"></i> Dashboard
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm bg-gray-800">
+          <i class="ph ph-check-circle text-lg"></i> Tasks
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm hover:bg-gray-800">
+          <i class="ph ph-star text-lg"></i> Goals
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm hover:bg-gray-800">
+          <i class="ph ph-clock text-lg"></i> Time
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm hover:bg-gray-800">
+          <i class="ph ph-calendar text-lg"></i> Calendar
+        </a>
+        <!-- Add more if needed -->
+      </nav>
+    </div>
+
+    <!-- Bottom Links -->
+    <div class="space-y-2 px-4 mb-4">
+      <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm hover:bg-gray-800">
+        <i class="ph ph-gear text-lg"></i> Settings
+      </a>
+      <a href="#" class="flex items-center gap-3 px-4 py-2 rounded text-sm hover:bg-gray-800">
+        <i class="ph ph-sign-out text-lg"></i> Log Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="md:ml-64 p-6 space-y-10">
+    <h1 class="text-2xl font-bold">Main Content</h1>
+    <p class="text-gray-600">Scroll down to see sidebar stay fixed.</p>
+
+    <!-- Repeated content for scroll demo -->
+    <div class="space-y-10">
+      <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur...</p>
+      <p class="text-gray-500">Another section here...</p>
+      <p class="text-gray-500">Even more content scrolling...</p>
+      <p class="text-gray-500">Sidebar won't move with this scroll.</p>
+      <p class="text-gray-500">Repeat this to simulate page height...</p>
+      <p class="text-gray-500">More filler content...</p>
+      <p class="text-gray-500">And more...</p>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
